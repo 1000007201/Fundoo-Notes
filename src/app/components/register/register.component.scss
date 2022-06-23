@@ -1,0 +1,35 @@
+#username{
+    width: 100%;
+}
+.main{
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 100px;
+    width: 30%;
+    border: 1px solid rgb(228, 216, 216);
+    padding: 60px 40px;
+    border-radius: 6px;
+}
+.main_top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.example-button-row{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    justify-content: space-between;
+    margin-left: -15px;
+}
+input{
+    padding: 0px;
+}
+.name{
+    display: flex;
+}
+.second-name{
+    margin-left: 10px;
+}
