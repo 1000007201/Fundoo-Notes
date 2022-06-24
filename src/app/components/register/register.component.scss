@@ -1,13 +1,13 @@
 #username{
-    width: 100%;
+    width: 92%;
 }
 .main{
     display: flex;
-    // align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 100px;
-    width: 30%;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 70px;
+    height: 90%;
+    width: 50%;
     border: 1px solid rgb(228, 216, 216);
     padding: 60px 40px;
     border-radius: 6px;
@@ -22,7 +22,7 @@
     flex-direction: row;
     margin-top: 20px;
     justify-content: space-between;
-    margin-left: -15px;
+    width: 92%;
 }
 input{
     padding: 0px;
@@ -32,4 +32,27 @@ input{
 }
 .second-name{
     margin-left: 10px;
+}
+img{
+    width: 200px;
+    height: auto;
+}
+.form-register{
+    width: 60%;
+}
+.image-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.image-block > p{
+    text-align: center;
+    font-size: 17px;
+    width: 70%;
+    margin-top: 20px;
+    color: rgb(134, 129, 129);
+}
+#sign-in-button{
+    margin-left: -13px;
 }
