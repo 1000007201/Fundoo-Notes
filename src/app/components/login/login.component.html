@@ -1,41 +1,49 @@
 <div class="main-top" fxLayout="column" fxLayoutAlign="center center">
     <div class="main" fxLayout="column" fxLayoutAlign="center center">
         <div class="login-heading" fxLayout="column" fxLayoutAlign="space-around center">
-            <h2><strong><span><span class="f-blue">F</span><span
-                class="u-red">u</span><span class="n-yellow">n</span><span class="d-blue">d</span><span
-                class="o-green">o</span><span class="o-red">o</span></span></strong></h2>
+            <h2><strong><span><span class="f-blue">F</span><span class="u-red">u</span><span
+                            class="n-yellow">n</span><span class="d-blue">d</span><span class="o-green">o</span><span
+                            class="o-red">o</span></span></strong></h2>
             <h1>Sign in</h1>
             <h4>Use your fundoo account</h4>
         </div>
-        <div class="login-form" fxLayout="column" fxLayoutAlign="center center">
-            <form [formGroup]="loginForm">
-            <div class="form-input">
-                <mat-form-field appearance="outline">
-                    <mat-label>Email</mat-label>
-                    <input type="email" matInput>
-                </mat-form-field>
-            </div>
-            <div class="form-input">
-                <mat-form-field appearance="outline">
-                    <mat-label>Password</mat-label>
-                    <input type="password" matInput>
-                </mat-form-field>
-            </div>
-            <div id="forgot-button" class="example-button-row">
-                <button routerLink="/forgot" mat-button color="primary">Forgot password?</button>
-            </div>
-            <div class="learn-more">
-                <p>Not your computer? Use Guest mode to sign in privately.</p>
-            </div>
-            <div class="login-button"  fxLayout="row" fxLayoutAlign="space-between end">
-                <div id="create-button" class="example-button-row">
-                    <button routerLink="/register" mat-button color="primary">Create account</button>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="login-form" fxLayout="column" fxLayoutAlign="center center">
+
+                <div class="form-input">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput formControlName="email">
+                    </mat-form-field>
+                    <div *ngIf="submitted && f['email'].errors">
+                        <p *ngIf="f['email'].errors['required']" class="invalid-feedback">email is required</p>
+                        <p *ngIf="f['email'].errors['email']" class="invalid-feedback">email not valid</p>
+                    </div>
                 </div>
-                <div class="example-button-row">
-                    <button mat-raised-button color="primary">Next</button>
+                <div class="form-input">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput formControlName="password">
+                    </mat-form-field>
+                    <div *ngIf="submitted && f['password'].errors">
+                        <p *ngIf="f['password'].errors['required']" class="invalid-feedback">password is required</p>
+                    </div>
+                </div>
+                <div id="forgot-button" class="example-button-row">
+                    <button routerLink="/forgot" mat-button color="primary">Forgot password?</button>
+                </div>
+                <div class="learn-more">
+                    <p>Not your computer? Use Guest mode to sign in privately.</p>
+                </div>
+                <div class="login-button" fxLayout="row" fxLayoutAlign="space-between end">
+                    <div id="create-button" class="example-button-row">
+                        <button routerLink="/register" mat-button color="primary">Create account</button>
+                    </div>
+                    <div class="example-button-row">
+                        <button type="submit" mat-raised-button color="primary">Next</button>
+                    </div>
                 </div>
             </div>
-            </form>
-        </div>
+        </form>
     </div>
 </div>
