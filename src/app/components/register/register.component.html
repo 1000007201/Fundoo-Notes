@@ -1,24 +1,26 @@
-<div class="main_top">
+<!-- <div class="main_top">
   <div class="main">
     <div class="form-register">
       <div>
-        <h1>Fundoo</h1>
+        <h1><span><span class="f-blue">F</span><span
+          class="u-red">u</span><span class="n-yellow">n</span><span class="d-blue">d</span><span
+          class="o-green">o</span><span class="o-red">o</span></span></h1>
       </div>
       <div>
         <h2>Create Your Account</h2>
       </div>
-      <form action="#">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <div class="name">
           <div>
             <mat-form-field appearance="outline">
               <mat-label>First Name</mat-label>
-              <input matInput placeholder="">
+              <input matInput formControlName="firstname">
             </mat-form-field>
           </div>
           <div class="second-name">
             <mat-form-field appearance="outline">
               <mat-label>Last Name</mat-label>
-              <input matInput placeholder="">
+              <input matInput formControlName="lastname">
             </mat-form-field>
           </div>
         </div>
@@ -26,7 +28,7 @@
         <div>
           <mat-form-field id="username" appearance="outline">
             <mat-label>User Name</mat-label>
-            <input matInput placeholder="">
+            <input matInput formControlName="username">
             <mat-hint>You can use letters, numbers and periods</mat-hint>
           </mat-form-field>
         </div>
@@ -37,13 +39,13 @@
           <div>
             <mat-form-field appearance="outline">
               <mat-label>Password</mat-label>
-              <input type="password" matInput placeholder="">
+              <input type="password" formControlName="password" matInput>
             </mat-form-field>
           </div>
           <div class="second-name">
             <mat-form-field appearance="outline">
               <mat-label>Confirm</mat-label>
-              <input type="password" matInput placeholder="">
+              <input type="password" formControlName="confirm" matInput>
             </mat-form-field>
           </div>
         </div>
@@ -51,13 +53,84 @@
           <mat-checkbox class="example-margin">Show Password</mat-checkbox>
         </div>
         <div class="example-button-row">
-          <button id="sign-in-button" mat-button color="primary">Sign in instead</button>
-          <button mat-raised-button color="primary">Next</button>
+          <button routerLink="/login" id="sign-in-button" mat-button color="primary">Sign in instead</button>
+          <button mat-raised-button color="primary" type="submit">Next</button>
         </div>
       </form>
     </div>
     <div class="image-block">
-      <img src="../../../assets/register.png">
+      <img src="../../../assets/account.svg">
+      <p>One account. All of Google working for you.</p>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+
+<div class="main_top">
+  <div class="main">
+    <div class="form-register">
+      <div>
+        <h1><span><span class="f-blue">F</span><span
+          class="u-red">u</span><span class="n-yellow">n</span><span class="d-blue">d</span><span
+          class="o-green">o</span><span class="o-red">o</span></span></h1>
+      </div>
+      <div>
+        <h2>Create Your Account</h2>
+      </div>
+      <form [formGroup]="registerForm"  (ngSubmit)="onSubmit()">
+        <div class="name">
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>First Name</mat-label>
+              <input matInput formControlName="firstname">
+            </mat-form-field>
+          </div>
+          <div class="second-name">
+            <mat-form-field appearance="outline">
+              <mat-label>Last Name</mat-label>
+              <input matInput formControlName="lastname">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div>
+          <mat-form-field id="username" appearance="outline">
+            <mat-label>User Name</mat-label>
+            <input matInput>
+            <mat-hint>You can use letters, numbers and periods</mat-hint>
+          </mat-form-field>
+        </div>
+        <div class="example-button-row">
+          <button mat-button color="primary">Use my current email address instead</button>
+        </div>
+        <div class="name">
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input type="password" matInput>
+            </mat-form-field>
+          </div>
+          <div class="second-name">
+            <mat-form-field appearance="outline">
+              <mat-label>Confirm</mat-label>
+              <input type="password" matInput>
+            </mat-form-field>
+          </div>
+        </div>
+        <div>
+          <mat-checkbox class="example-margin">Show Password</mat-checkbox>
+        </div>
+        <div class="example-button-row">
+          <button routerLink="/login" id="sign-in-button" mat-button color="primary">Sign in instead</button>
+          <button mat-raised-button color="primary" type="submit">Next</button>
+        </div>
+      </form>
+    </div>
+    <div class="image-block">
+      <img src="../../../assets/account.svg">
       <p>One account. All of Google working for you.</p>
     </div>
   </div>
