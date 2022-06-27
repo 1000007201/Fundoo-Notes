@@ -17,7 +17,7 @@
               <input matInput formControlName="firstname">
             </mat-form-field>
             <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
-              <div *ngIf="f['username'].errors['required']">firstname is required</div>
+              <div *ngIf="f['username'].errors['required']">Enter firstname</div>
             </div>
           </div>
           <div class="second-name">
@@ -26,7 +26,7 @@
               <input matInput formControlName="lastname">
             </mat-form-field>
             <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
-              <div *ngIf="f['username'].errors['required']">lastname is required</div>
+              <div *ngIf="f['username'].errors['required']">Enter lastname</div>
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@
             <p class="password-hint">You can use letters, numbers and periods</p>
             </div>
             <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
-              <div *ngIf="f['username'].errors['required']">username is required</div>
+              <div *ngIf="f['username'].errors['required']">Enter username</div>
             </div>
          
         </div>
@@ -55,7 +55,7 @@
               <input type="password" matInput formControlName="password">
             </mat-form-field>
             <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
-              <div *ngIf="f['username'].errors['required']">password is required</div>
+              <div *ngIf="f['username'].errors['required']">Enter password</div>
             </div>
           </div>
           <div class="second-name">
@@ -64,7 +64,7 @@
               <input type="password" matInput formControlName="confirm">              
             </mat-form-field>
             <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
-              <div *ngIf="f['username'].errors['required']">confirm passwodrd is required</div>
+              <div *ngIf="f['username'].errors['required']">Enter confirm password</div>
             </div>
           </div>
         </div>
