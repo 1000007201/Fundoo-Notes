@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validator, Validators } from '@angular/forms';
+import { UserService } from '../../services/userservice/user.service';
 
 @Component({
   selector: 'app-forget-password',
@@ -10,7 +11,7 @@ export class ForgetPasswordComponent implements OnInit {
   forgotForm !: FormGroup;
   submitted=false;
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder, private user:UserService) { }
 
   ngOnInit(): void {
     this.forgotForm= this.fb.group({
@@ -26,7 +27,13 @@ export class ForgetPasswordComponent implements OnInit {
       return;
     }
     
-    console.log(this.forgotForm.value);
+    console.log('Api calling starts');
+    let data={
+      email:this.forgotForm.value.email
+    }
+    this.user.forgot(data).subscribe((res:any) =>{
+      console.log(res);
+    })
   }
 
 }
