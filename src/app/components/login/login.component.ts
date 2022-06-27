@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { UserService } from '../../services/userservice/user.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ export class LoginComponent implements OnInit {
   loginForm !: FormGroup;
   submitted=false;
 
-  constructor(private fb:FormBuilder) {}
+  constructor(private fb:FormBuilder, private user:UserService) {}
 
   ngOnInit(): void {
     this.loginForm=this.fb.group({
@@ -25,7 +26,14 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid){
       return;
     }
-    console.log(this.loginForm.value);
+    console.log('Api calling starts');
+    let data={
+      email: this.loginForm.value.email,
+      password: this.loginForm.value.password
+    }
+    this.user.login(data).subscribe((res:any)=>{
+      console.log(res);
+    })
   }
 
 }
