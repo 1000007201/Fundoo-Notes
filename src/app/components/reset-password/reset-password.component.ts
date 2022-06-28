@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validator, Validators } from '@angular/forms'
+import { ActivatedRoute } from '@angular/router';
+import { UserService } from '../../services/userservice/user.service'
 
 @Component({
   selector: 'app-reset-password',
@@ -9,14 +11,16 @@ import { FormGroup, FormBuilder, Validator, Validators } from '@angular/forms'
 export class ResetPasswordComponent implements OnInit {
   resetForm !: FormGroup;
   submitted=false;
+  token:any;
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder, private user:UserService, private reset:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.resetForm=this.fb.group({
       newpassword: ['', Validators.required],
-      confirmpassword: ['', Validators.required]
+      confirmpassword: ['', [Validators.required]]
     })
+    this.token = this.reset.snapshot.params['token']
   }
   get f(){ return this.resetForm.controls;}
   onSubmit(){
@@ -25,7 +29,14 @@ export class ResetPasswordComponent implements OnInit {
     if (this.resetForm.invalid){
       return;
     }
-    console.log(this.resetForm.value);
+    console.log('Api calling starts');
+    let data={
+      newPassword: this.resetForm.value.newpassword
+    }
+    this.user.resetPassword(data, this.token).subscribe((res:any) => {
+      console.log(res);
+    })
+
   }
 
 }

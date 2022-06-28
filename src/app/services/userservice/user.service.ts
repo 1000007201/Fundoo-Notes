@@ -35,4 +35,23 @@ export class UserService {
     }
     return this.http.postService('user/reset', data, false, header);
   }
+  encode(data: any) {
+    const formBody = [];
+    for (const property in data) {
+      const encodedKey = encodeURIComponent(property);
+      const encodedValue = encodeURIComponent(data[property]);
+      formBody.push(encodedKey + '=' + encodedValue);
+    }
+    return formBody.join('&');
+  }
+  resetPassword(data:any, token:any){
+    let header={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json',
+        'Authorization': token
+      })
+    }
+    return this.http.postService('user/reset-password', this.encode(data), true, header)
+  }
 }
