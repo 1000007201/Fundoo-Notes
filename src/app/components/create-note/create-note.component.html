@@ -1,11 +1,18 @@
-<div>
+<div fxLayoutAlign="center center">
     <div class="add-form" fxLayout="column" fxLayoutAlign="center center">
-        <div *ngIf="flag"><input type="text" placeholder="Title" ></div>
-        <div fxLayout="column">
-            <div>
-            <input type="text" placeholder="Take a Note" (click)="open()">
+        <div class="form-element">
+            <div class="input-form" *ngIf="flag">
+                <input type="text" placeholder="Title">
             </div>
-            <div *ngIf="flag" fxLayout="row"><app-icons></app-icons><button (click)="close()">close</button></div>
+            <div class="input-form">
+                <input type="text" placeholder="Take a note..." (click)="open()">
+            </div>
+            <div class="icon-button" *ngIf="flag" fxLayout="row" fxLayoutAlign="space-between center">
+                <div class="icon-container">
+                <app-icons></app-icons>
+                </div>
+                <button mat-button (click)="close()">Close</button>
+            </div>
         </div>
     </div>
 </div>

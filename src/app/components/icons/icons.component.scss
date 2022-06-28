@@ -1,0 +1,15 @@
+.icons > img{
+    height: 18px;
+    margin-top: 5px;
+}
+.icons{
+    display: flex;
+    height: 36px;
+    width: 36px;
+    align-items: center;
+    justify-content: center;
+}
+.icons:hover{
+    background-color: rgba(224, 223, 221, 0.995);
+    border-radius: 20px;
+}
