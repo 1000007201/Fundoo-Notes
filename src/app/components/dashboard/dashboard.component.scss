@@ -42,16 +42,11 @@
   height: 40px;
 }
 .input-bar{
-  width: 40%;
+  width: 45%;
   background-color: rgb(249, 247, 247);
   margin-left: 100px;
-  border-radius: 5px;
+  border-radius: 10px;
   height: 50px;
-}
-.input-bar > input:active{
-  background: transparent;
-  border: none;
-  outline: none;
 }
 #input-bar{
   font-family: 'Open Sans', sans-serif;;
@@ -59,8 +54,78 @@
   height: 40px;
   border: none;
   outline: none;
-  border-radius: 5px;
+  border-radius: 20px;
   background-color: rgb(249, 247, 247);
   font-size: 15px;
   font-weight: bold;
+}
+.example-sidenav-container{
+  background-color: #fff;
+  border: none;
+}
+.logo-search{
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  margin-right: 5px;
+}
+.logo-search > img{
+  height: 30px;
+}
+.logo-search:hover{
+  background-color: rgb(211, 207, 207);
+}
+.input-bar>input:focus{
+  background-color: #fff;
+}
+.side-nav{
+  width: 20%;
+}
+.icons{
+  display: flex;
+  height: 42px;
+  width: 42px;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+}
+.icons:hover{
+  background-color: rgba(224, 223, 221, 0.995);
+  border-radius: 20px;
+  cursor: pointer;
+}
+.icons > img{
+  height: 22px;
+  margin-top: 5px;
+}
+.nbc{
+  width: 100%;
+  padding-right: 0px;
+  margin: 0px;
+}
+.icon1{
+  margin-right: 20px;
+}
+.icons2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  margin-right: 10px;
+}
+.icons2 > img{
+  height: 22px;
+  margin-top: 5px;
+}
+.mat-nav-list .mat-list-item{
+ border-top-right-radius: 40px;
+ border-bottom-right-radius: 40px ;
+ width: 97%;
+}
+.mat-sidenav{
+  border: none;
 }

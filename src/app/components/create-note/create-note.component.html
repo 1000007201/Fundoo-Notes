@@ -1,15 +1,23 @@
 <div fxLayoutAlign="center center">
     <div class="add-form" fxLayout="column" fxLayoutAlign="center center">
         <div class="form-element">
-            <div class="input-form" *ngIf="flag">
-                <input type="text" placeholder="Title">
+            <div fxLayout="row">
+                <div class="input-form" *ngIf="flag"><input type="text" placeholder="Title"></div>
+                <div *ngIf="flag" class="icons"><img src="../../../assets/push_pin_.svg" alt=""></div>
             </div>
-            <div class="input-form">
-                <input type="text" placeholder="Take a note..." (click)="open()">
+            <div fxLayout="row">
+                <div class="input-form">
+                    <input id="take-note" type="text" placeholder="Take a note..." (click)="open()">
+                </div>
+                <div *ngIf="!flag" fxLayout="row">
+                    <div class="icons"><img src="../../../assets/new_list.svg" alt=""></div>
+                    <div class="icons"><img src="../../../assets/brush_FILL.svg" alt=""></div>
+                    <div class="icons"><img src="../../../assets/image_FILL.svg" alt=""></div>
+                </div>
             </div>
             <div class="icon-button" *ngIf="flag" fxLayout="row" fxLayoutAlign="space-between center">
                 <div class="icon-container">
-                <app-icons></app-icons>
+                    <app-icons></app-icons>
                 </div>
                 <button mat-button (click)="close()">Close</button>
             </div>

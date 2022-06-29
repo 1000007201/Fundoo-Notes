@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 .notes-container{
     margin-left: 120px;
     margin-top: 20px;
@@ -8,8 +9,38 @@
     border-radius: 8px;
 }
 .note-things{
-    margin: 5px;
+    margin: 2px;
 }
 .note-data{
     margin-left: 5px;
+}
+#pin-image{
+    height: 22px;
+}
+.image-container{
+    display: none;
+}
+.note:hover{
+    box-shadow: 2px 2px 3px rgba(167, 163, 163, 0.667);
+}
+.note:hover .image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 31px;
+    width: 31px;
+    border-radius: 20px;
+}
+.image-container:hover{
+    background-color: rgba(224, 223, 221, 0.995);
+    cursor: pointer;
+}
+.title-container{
+    font-family: 'Open Sans', sans-serif;
+}
+.icons{
+    visibility: hidden;
+}
+.note:hover .icons{
+    visibility: visible;
 }
