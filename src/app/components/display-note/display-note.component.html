@@ -1,15 +1,16 @@
-<div>
-    <div class="notes-container" fxLayout="row" fxLayoutAlign="start start">
+<div class="notes-back" fxLayout="'row" fxLayoutAlign="start start">
+    <div class="notes-container" fxLayout="row" fxLayoutAlign="start start" *ngFor="let note of childMessage">
+        <!-- <p>{{childMessage.data.success}}</p> -->
         <div class="note">
             <div class="note-things">
                 <div class="note-data">
                     <div class="title-container" fxLayout="row" fxLayoutAlign="space-between start">
-                        <h2>Title</h2>
+                        <h2>{{note.title}}</h2>
                         <div class="image-container">
                         <img id="pin-image" src="../../../assets/push_pin_.svg">
                         </div>
                     </div>
-                    <h4>Note data</h4>
+                    <h4>{{note.description}}</h4>
                 </div>
                 <div class="icons">
                     <app-icons></app-icons>

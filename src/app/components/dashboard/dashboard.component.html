@@ -28,16 +28,15 @@
     <mat-sidenav class="side-nav" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
       [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
       <mat-nav-list fxLayout="column" fxLayoutAlign="start start">
-        <a mat-list-item routerLink="dashboard/notes"><div class="icons2" id="side-icons"><img src="../../../assets/lightbulb.svg" alt=""></div>Notes</a>
-        <a mat-list-item routerLink="dashboard/trash"><div class="icons2" id="side-icons"><img src="../../../assets/notifications.svg" alt=""></div>Reminders</a>
-        <a mat-list-item routerLink="dashboard/archive"><div class="icons2" id="side-icons"><img src="../../../assets/archive_.svg" alt=""></div>Archive</a>
-        <a mat-list-item routerLink="dashboard/trash"><div class="icons2" id="side-icons"><img src="../../../assets/edit_.svg" alt=""></div>Edit Label</a>
-        <a mat-list-item routerLink="dashboard/trash"><div class="icons2" id="side-icons"><img src="../../../assets/delete.svg" alt=""></div>Trash</a>
+        <a mat-list-item routerLink="/dashboard/notes"><div class="icons2" id="side-icons"><img src="../../../assets/lightbulb.svg" alt=""></div>Notes</a>
+        <a mat-list-item routerLink="/dashboard/trash"><div class="icons2" id="side-icons"><img src="../../../assets/notifications.svg" alt=""></div>Reminders</a>
+        <a mat-list-item routerLink="/dashboard/archive"><div class="icons2" id="side-icons"><img src="../../../assets/archive_.svg" alt=""></div>Archive</a>
+        <a mat-list-item routerLink="/dashboard/trash"><div class="icons2" id="side-icons"><img src="../../../assets/edit_.svg" alt=""></div>Edit Label</a>
+        <a mat-list-item routerLink="/dashboard/trash"><div class="icons2" id="side-icons"><img src="../../../assets/delete.svg" alt=""></div>Trash</a>
       </mat-nav-list>
     </mat-sidenav>
 
     <mat-sidenav-content>
-      <app-create-note></app-create-note>
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>

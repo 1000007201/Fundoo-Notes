@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 .notes-container{
-    margin-left: 120px;
+    margin-left: 20px;
     margin-top: 20px;
+    width: 240px;
 }
 .note{
     border: 1px solid rgba(200, 196, 196, 0.389);
@@ -43,4 +44,7 @@
 }
 .note:hover .icons{
     visibility: visible;
+}
+.notes-back{
+    margin-left: 120px;
 }
