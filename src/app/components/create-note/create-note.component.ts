@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { FormBuilder, FormGroup } from '@angular/forms'
 import { NoteService } from 'src/app/services/noteservice/note.service';
 
 @Component({
@@ -10,7 +10,6 @@ import { NoteService } from 'src/app/services/noteservice/note.service';
 export class CreateNoteComponent implements OnInit {
   createNoteForm !: FormGroup
   flag=false;
-  token:any
 
   constructor(private fb:FormBuilder, private note:NoteService) { }
 
@@ -19,7 +18,6 @@ export class CreateNoteComponent implements OnInit {
       title:[''],
       desc:['']
     })
-    this.token = localStorage.getItem('token');
   }
   open(){
     this.flag=true
@@ -32,9 +30,7 @@ export class CreateNoteComponent implements OnInit {
     }
     
     console.log('Api calling starts..')
-    console.log(this.token)
-    console.log(data)
-    this.note.create_note(data, this.token).subscribe((res)=>{
+    this.note.create_note(data).subscribe((res)=>{
       console.log(res);
     })
   }

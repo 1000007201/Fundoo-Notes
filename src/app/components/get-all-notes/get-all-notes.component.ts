@@ -13,8 +13,8 @@ export class GetAllNotesComponent implements OnInit {
   constructor(private note:NoteService) { }
 
   ngOnInit(): void {
-    this.token=localStorage.getItem('token')
-    this.note.get_note(this.token).subscribe((res:any)=>{
+    // this.token=localStorage.getItem('token')
+    this.note.get_note().subscribe((res:any)=>{
       console.log(res.data.data)
       this.notesValue = res.data.data
     })

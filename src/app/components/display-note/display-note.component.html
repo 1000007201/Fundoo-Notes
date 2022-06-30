@@ -5,12 +5,12 @@
             <div class="note-things">
                 <div class="note-data">
                     <div class="title-container" fxLayout="row" fxLayoutAlign="space-between start">
-                        <h2>{{note.title}}</h2>
+                        <h2 (click)="openDialog(note)">{{note.title}}</h2>
                         <div class="image-container">
                         <img id="pin-image" src="../../../assets/push_pin_.svg">
                         </div>
                     </div>
-                    <h4>{{note.description}}</h4>
+                    <h4 (click)="openDialog(note)">{{note.description}}</h4>
                 </div>
                 <div class="icons">
                     <app-icons></app-icons>
