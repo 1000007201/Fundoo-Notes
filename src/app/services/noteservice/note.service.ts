@@ -37,4 +37,40 @@ export class NoteService {
     }
       return this.http.postService('notes/updateNotes', data, true, header)
   }
+  delete_note(data:any){
+    let header={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.http.postService('notes/trashNotes', data, true, header)
+  }
+  archive_note(data:any){
+    let header={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.http.postService('notes/archiveNotes', data, true, header)
+  }
+  get_archive_note(){
+    let header={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.http.getService('notes/getArchiveNotesList', true, header)
+  }
+  get_trash_note(){
+    let header={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.http.getService('notes/getTrashNotesList', true, header)
+  }
 }

@@ -1,4 +1,4 @@
-<div class="notes-back" fxLayout="'row" fxLayoutAlign="start start">
+<div class="notes-back" fxLayout="row wrap" fxLayoutAlign="start start">
     <div class="notes-container" fxLayout="row" fxLayoutAlign="start start" *ngFor="let note of childMessage">
         <!-- <p>{{childMessage.data.success}}</p> -->
         <div class="note">
@@ -12,8 +12,8 @@
                     </div>
                     <h4 (click)="openDialog(note)">{{note.description}}</h4>
                 </div>
-                <div class="icons">
-                    <app-icons></app-icons>
+                <div class="icons" (click)="onclick(note.id)">
+                    <app-icons [childmessage]="noteId"></app-icons>
                 </div>
             </div>
         </div>

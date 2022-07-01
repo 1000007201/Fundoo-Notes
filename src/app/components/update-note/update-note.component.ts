@@ -28,9 +28,6 @@ export class UpdateNoteComponent implements OnInit {
     this.note.update_note(data).subscribe((res:any)=>{
       console.log(res);
     })
-  }
-
-  onNoClick(): void {
     this.dialogRef.close();
   }
 }

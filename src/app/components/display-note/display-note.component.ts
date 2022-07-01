@@ -9,11 +9,15 @@ import { UpdateNoteComponent } from '../update-note/update-note.component';
   styleUrls: ['./display-note.component.scss']
 })
 export class DisplayNoteComponent implements OnInit {
+  noteId:any;
 
   @Input() childMessage: any;
 
   constructor(public dialog: MatDialog, public note:NoteService) { }
   ngOnInit(): void {
+  }
+  onclick(id:any){
+    this.noteId=id;
   }
 
   openDialog(note:any): void {

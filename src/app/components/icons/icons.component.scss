@@ -14,3 +14,22 @@
     border-radius: 20px;
     cursor: pointer;
 }
+.mat-menu-item{
+    display: flex;
+    height: 30px;
+    align-items: center;
+}
+.color-menu{
+    width: 500px;
+    border: 1px solid black;
+}
+.color-container{
+    // width: 100%;
+    // height: auto;
+    border: 3px solid red;
+}
+.color-button{
+    width: 35px;
+    height: 35px;
+    border-radius: 18px;
+}

@@ -22,7 +22,8 @@
     display: none;
 }
 .note:hover{
-    box-shadow: 2px 2px 3px rgba(167, 163, 163, 0.667);
+    box-shadow: 2px 2px 2px rgba(167, 163, 163, 0.667);
+    box-shadow: 2px 2px 2px rgba(167, 163, 163, 0.667);
 }
 .note:hover .image-container{
     display: flex;
@@ -47,4 +48,6 @@
 }
 .notes-back{
     margin-left: 120px;
+    width: 80%;
+    height:auto;
 }

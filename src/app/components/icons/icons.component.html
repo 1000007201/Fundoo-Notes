@@ -1,8 +1,23 @@
 <div class="icon-container" fxLayout="row" fxLayoutAlign="space-between start">
     <div class="icons"><img src="../../../assets/add_alert_.svg" alt=""></div>
     <div class="icons"><img src="../../../assets/person_add_.svg" alt=""></div>
-    <div class="icons"><img src="../../../assets/palette_.svg" alt=""></div>
+    <div mat-button [matMenuTriggerFor]="colors" class="icons"><img src="../../../assets/palette_.svg" alt=""></div>
     <div class="icons"><img src="../../../assets/image_.svg" alt=""></div>
-    <div class="icons"><img src="../../../assets/archive_.svg" alt=""></div>
-    <div class="icons"><img src="../../../assets/more_vert_.svg" alt=""></div>
+    <div class="icons"><img src="../../../assets/archive_.svg" (click)="archive()" alt=""></div>
+    <div mat-button [matMenuTriggerFor]="menu" class="icons"><img src="../../../assets/more_vert_.svg" alt=""></div>
+    <mat-menu id="menu" #menu="matMenu">
+        <button (click)="delete()" mat-menu-item>Delete note</button>
+        <button mat-menu-item>Add label</button>
+        <button mat-menu-item>Add drawing</button>
+        <button mat-menu-item>Make a copy</button>
+        <button mat-menu-item>Show checkbox</button>
+        <button mat-menu-item>Copy to Google Docs</button>
+    </mat-menu>
+    <mat-menu class="color-menu" #colors="matMenu">
+        <div class="color-container" fxLayout="row">
+            <div *ngFor="let number of [0,1,2,3,4]">
+                <button class="color-button">{{number}}</button>
+            </div>
+        </div>
+    </mat-menu>
 </div>
