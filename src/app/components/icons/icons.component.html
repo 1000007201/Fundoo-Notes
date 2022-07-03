@@ -1,10 +1,18 @@
 <div class="icon-container" fxLayout="row" fxLayoutAlign="space-between start">
     <div *ngIf="param!= 'trash'" class="icons"><img src="../../../assets/add_alert_.svg" alt=""></div>
     <div *ngIf="param!= 'trash'" class="icons"><img src="../../../assets/person_add_.svg" alt=""></div>
-    <div *ngIf="param!= 'trash'" mat-button [matMenuTriggerFor]="colorMenu" class="icons"><img src="../../../assets/palette_.svg" alt=""></div>
+    <div *ngIf="param!= 'trash'" mat-button [matMenuTriggerFor]="colorMenu" class="icons"><img
+            src="../../../assets/palette_.svg" alt=""></div>
     <div *ngIf="param!= 'trash'" class="icons"><img src="../../../assets/image_.svg" alt=""></div>
-    <div *ngIf="param!= 'trash' && param == 'archive'"class="icons"><img src="../../../assets/archive_.svg" (click)="archive()" alt=""></div>
-    <div *ngIf="param!= 'trash'" mat-button [matMenuTriggerFor]="menu" class="icons"><img src="../../../assets/more_vert_.svg" alt="">
+    <div fxLayot="row" fxLayoutAlign="star center">
+        <div *ngIf="param == 'trash'" class="icons"><img src="../../../assets/delete_forever_.svg" alt=""></div>
+        <div *ngIf="param == 'trash'" class="icons"><img src="../../../assets/restore_from_trash_.svg" alt=""></div>
+    </div>
+    <div *ngIf="param!= 'trash' && param!= 'archive'" class="icons"><img src="../../../assets/archive_.svg" alt=""></div>
+    <div *ngIf="param!= 'trash' && param == 'archive'" class="icons"><img src="../../../assets/unarchive_.svg"
+            (click)="archive()" alt=""></div>
+    <div *ngIf="param!= 'trash'" mat-button [matMenuTriggerFor]="menu" class="icons"><img
+            src="../../../assets/more_vert_.svg" alt="">
     </div>
     <mat-menu id="menu" #menu="matMenu">
         <button (click)="delete()" mat-menu-item>Delete note</button>
