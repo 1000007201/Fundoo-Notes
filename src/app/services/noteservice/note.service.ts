@@ -73,4 +73,13 @@ export class NoteService {
     }
     return this.http.getService('notes/getTrashNotesList', true, header)
   }
+  change_note_color(data:any){
+    let header={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.http.postService('notes/changesColorNotes', data, true, header)
+  }
 }

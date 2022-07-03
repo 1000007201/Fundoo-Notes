@@ -19,17 +19,18 @@
     height: 30px;
     align-items: center;
 }
-.color-menu{
-    width: 500px;
-    border: 1px solid black;
+::ng-deep .color-menu{
+    width: 160px;
 }
-.color-container{
-    // width: 100%;
-    // height: auto;
-    border: 3px solid red;
-}
-.color-button{
-    width: 35px;
-    height: 35px;
-    border-radius: 18px;
-}
+.pop {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: white;
+    max-width: 170px;
+    margin-left: 5px;
+  }
+  .colorButton {
+    margin-right: 1px;
+    white-space: 2px;
+  }
