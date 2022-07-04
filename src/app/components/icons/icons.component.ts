@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NoteService } from 'src/app/services/noteservice/note.service';
 
@@ -8,6 +8,7 @@ import { NoteService } from 'src/app/services/noteservice/note.service';
   styleUrls: ['./icons.component.scss']
 })
 export class IconsComponent implements OnInit {
+  message:any='hello icon'
   colors: Array<any> = [
     { code: '#ffffff', name: 'white' },
     { code: '#FF6347', name: 'red' },
@@ -23,6 +24,7 @@ export class IconsComponent implements OnInit {
     { code: '#D3D3D3', name: 'grey'}
   ]
   @Input() childmessage: any;
+  @Output() messageEvent = new EventEmitter<any>(); 
   constructor(private note:NoteService, private route:ActivatedRoute) {}
   param:any
   ngOnInit(): void {
@@ -37,7 +39,9 @@ export class IconsComponent implements OnInit {
     }
     this.note.archive_note(data).subscribe((res:any)=>{
       console.log(res)
+      this.messageEvent.emit(this.message)
     })
+    
   }
   un_archive(){
     let data={
@@ -46,6 +50,7 @@ export class IconsComponent implements OnInit {
     }
     this.note.archive_note(data).subscribe((res)=>{
       console.log(res);
+      this.messageEvent.emit(this.message)
     })
   }
   delete(){
@@ -55,6 +60,7 @@ export class IconsComponent implements OnInit {
     }
     this.note.delete_note(data).subscribe((res:any)=>{
       console.log(res);
+      this.messageEvent.emit(this.message)
     })
   }
   restore(){
@@ -64,6 +70,7 @@ export class IconsComponent implements OnInit {
     }
     this.note.delete_note(data).subscribe((res)=>{
       console.log(res);
+      this.messageEvent.emit(this.message)
     })
   }
   delete_permanent(){
@@ -73,6 +80,7 @@ export class IconsComponent implements OnInit {
     }
     this.note.permanent_delete(data).subscribe((res)=>{
       console.log(res);
+      this.messageEvent.emit(this.message)
     })
   }
   change_color(note_color:any){
@@ -84,7 +92,7 @@ export class IconsComponent implements OnInit {
     console.log(this.param)
     this.note.change_note_color(data).subscribe((res)=>{
       console.log(res);
+      this.messageEvent.emit(this.message)
     })
   }
-
 }

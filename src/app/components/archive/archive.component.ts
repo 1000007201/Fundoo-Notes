@@ -12,9 +12,16 @@ export class ArchiveComponent implements OnInit {
   constructor(private note:NoteService) { }
 
   ngOnInit(): void {
+    this.display_archive()
+  }
+  display_archive(){
     this.note.get_archive_note().subscribe((res:any)=>{
       this.result=res.data.data
       console.log(this.result)
     })
+  }
+  recieveMessage(event:any){
+    console.log(event)
+    this.display_archive()
   }
 }

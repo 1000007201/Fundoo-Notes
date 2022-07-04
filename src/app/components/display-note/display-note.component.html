@@ -13,7 +13,7 @@
                     <h4 (click)="openDialog(note)">{{note.description}}</h4>
                 </div>
                 <div class="icons" (click)="onclick(note.id)">
-                    <app-icons [childmessage]="noteId"></app-icons>
+                    <app-icons [childmessage]="noteId" (messageEvent)="receiveMessage($event)"></app-icons>
                 </div>
             </div>
         </div>

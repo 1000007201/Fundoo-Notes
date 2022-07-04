@@ -12,9 +12,18 @@ export class TrashComponent implements OnInit {
   constructor(private note:NoteService) { }
 
   ngOnInit(): void {
+   this.display_trash()
+  }
+
+  display_trash(){
     this.note.get_trash_note().subscribe((res:any)=>{
       console.log(res)
       this.result=res.data.data
     })
+  }
+
+  recieveMessage(event:any){
+    console.log(event);
+    this.display_trash();  
   }
 }

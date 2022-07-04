@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Inject } from '@angular/core';
+import { Component, OnInit, Input, Inject, Output, EventEmitter } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { NoteService } from 'src/app/services/noteservice/note.service';
 import { UpdateNoteComponent } from '../update-note/update-note.component';
@@ -12,6 +12,7 @@ export class DisplayNoteComponent implements OnInit {
   noteId:any;
 
   @Input() childMessage: any;
+  @Output() messageEvent = new EventEmitter<any>();
 
   constructor(public dialog: MatDialog, public note:NoteService) { }
   ngOnInit(): void {
@@ -30,5 +31,9 @@ export class DisplayNoteComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed');
     });
-    }
   }
+  receiveMessage(event:any){
+    console.log(event)
+    this.messageEvent.emit(event)
+  }
+}

@@ -34,8 +34,9 @@ export class CreateNoteComponent implements OnInit {
     console.log('Api calling starts..')
     this.note.create_note(data).subscribe((res)=>{
       console.log(res);
+      this.messageEvent.emit(this.message)
     })
-    this.messageEvent.emit(this.message)
+    
   }
 
 }
