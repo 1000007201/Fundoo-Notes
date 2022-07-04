@@ -25,4 +25,8 @@ export class GetAllNotesComponent implements OnInit {
       })
     })
   }
+  receiveMessage(event:any){
+    console.log(event)
+    this.get_all_note()
+  }
 }
