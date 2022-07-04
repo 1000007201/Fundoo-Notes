@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -30,6 +29,7 @@ import { UpdateNoteComponent } from './components/update-note/update-note.compon
 import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -64,7 +64,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatToolbarModule,
     MatDialogModule,
     FormsModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

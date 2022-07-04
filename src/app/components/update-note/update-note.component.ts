@@ -30,4 +30,7 @@ export class UpdateNoteComponent implements OnInit {
     })
     this.dialogRef.close();
   }
+  receiveMessage(event:any){
+    console.log(event);
+  }
 }

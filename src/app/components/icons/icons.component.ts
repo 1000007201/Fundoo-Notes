@@ -8,7 +8,7 @@ import { NoteService } from 'src/app/services/noteservice/note.service';
   styleUrls: ['./icons.component.scss']
 })
 export class IconsComponent implements OnInit {
-  message:any='hello icon'
+  message:any;
   colors: Array<any> = [
     { code: '#ffffff', name: 'white' },
     { code: '#FF6347', name: 'red' },
@@ -39,7 +39,7 @@ export class IconsComponent implements OnInit {
     }
     this.note.archive_note(data).subscribe((res:any)=>{
       console.log(res)
-      this.messageEvent.emit(this.message)
+      this.messageEvent.emit(this.message='Note Archived')
     })
     
   }
@@ -50,7 +50,7 @@ export class IconsComponent implements OnInit {
     }
     this.note.archive_note(data).subscribe((res)=>{
       console.log(res);
-      this.messageEvent.emit(this.message)
+      this.messageEvent.emit(this.message='Note Archived')
     })
   }
   delete(){
@@ -60,7 +60,7 @@ export class IconsComponent implements OnInit {
     }
     this.note.delete_note(data).subscribe((res:any)=>{
       console.log(res);
-      this.messageEvent.emit(this.message)
+      this.messageEvent.emit(this.message='Note Trashed')
     })
   }
   restore(){
@@ -70,7 +70,7 @@ export class IconsComponent implements OnInit {
     }
     this.note.delete_note(data).subscribe((res)=>{
       console.log(res);
-      this.messageEvent.emit(this.message)
+      this.messageEvent.emit(this.message='Note Restored')
     })
   }
   delete_permanent(){
@@ -80,7 +80,7 @@ export class IconsComponent implements OnInit {
     }
     this.note.permanent_delete(data).subscribe((res)=>{
       console.log(res);
-      this.messageEvent.emit(this.message)
+      this.messageEvent.emit(this.message='Note Deleted')
     })
   }
   change_color(note_color:any){
@@ -92,7 +92,7 @@ export class IconsComponent implements OnInit {
     console.log(this.param)
     this.note.change_note_color(data).subscribe((res)=>{
       console.log(res);
-      this.messageEvent.emit(this.message)
+      this.messageEvent.emit(this.message='Color Updated')
     })
   }
 }

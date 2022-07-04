@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteService } from 'src/app/services/noteservice/note.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class GetAllNotesComponent implements OnInit {
   notesValue:any;
   result:any;
 
-  constructor(private note:NoteService) { }
+  constructor(private note:NoteService, private snack:MatSnackBar) { }
 
   ngOnInit(): void {
     this.get_all_note();
@@ -27,6 +28,10 @@ export class GetAllNotesComponent implements OnInit {
   }
   receiveMessage(event:any){
     console.log(event)
-    this.get_all_note()
+    this.get_all_note();
+    this.openSnackBar(event);
+  }
+  openSnackBar(message: string) {
+    this.snack.open(message, 'Close', {duration:2000});
   }
 }
