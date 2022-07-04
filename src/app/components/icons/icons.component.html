@@ -5,12 +5,12 @@
             src="../../../assets/palette_.svg" alt=""></div>
     <div *ngIf="param!= 'trash'" class="icons"><img src="../../../assets/image_.svg" alt=""></div>
     <div fxLayot="row" fxLayoutAlign="star center">
-        <div *ngIf="param == 'trash'" class="icons"><img src="../../../assets/delete_forever_.svg" alt=""></div>
-        <div *ngIf="param == 'trash'" class="icons"><img src="../../../assets/restore_from_trash_.svg" alt=""></div>
+        <div *ngIf="param == 'trash'" class="icons" (click)="delete_permanent()"><img src="../../../assets/delete_forever_.svg" alt=""></div>
+        <div *ngIf="param == 'trash'" class="icons" (click)="restore()"><img src="../../../assets/restore_from_trash_.svg" alt=""></div>
     </div>
-    <div *ngIf="param!= 'trash' && param!= 'archive'" class="icons"><img src="../../../assets/archive_.svg" alt=""></div>
-    <div *ngIf="param!= 'trash' && param == 'archive'" class="icons"><img src="../../../assets/unarchive_.svg"
-            (click)="archive()" alt=""></div>
+    <div *ngIf="param!= 'trash' && param!= 'archive'" class="icons" (click)="archive()"><img src="../../../assets/archive_.svg" alt=""></div>
+    <div *ngIf="param!= 'trash' && param == 'archive'" class="icons" (click)="un_archive()"><img src="../../../assets/unarchive_.svg"
+            alt=""></div>
     <div *ngIf="param!= 'trash'" mat-button [matMenuTriggerFor]="menu" class="icons"><img
             src="../../../assets/more_vert_.svg" alt="">
     </div>

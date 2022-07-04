@@ -1,7 +1,7 @@
 <div class="notes-back" fxLayout="row wrap" fxLayoutAlign="start start">
     <div class="notes-container" fxLayout="row" fxLayoutAlign="start start" *ngFor="let note of childMessage">
         <!-- <p>{{childMessage.data.success}}</p> -->
-        <div class="note">
+        <div class="note" [style.background]="note?.color">
             <div class="note-things">
                 <div class="note-data">
                     <div class="title-container" fxLayout="row" fxLayoutAlign="space-between start">

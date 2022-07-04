@@ -46,6 +46,15 @@ export class NoteService {
     }
     return this.http.postService('notes/trashNotes', data, true, header)
   }
+  permanent_delete(data:any){
+    let header={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.http.postService('notes/deleteForeverNotes', data, true, header)
+  }
   archive_note(data:any){
     let header={
       headers: new HttpHeaders({

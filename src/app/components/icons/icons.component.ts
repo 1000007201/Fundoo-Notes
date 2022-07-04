@@ -39,12 +39,39 @@ export class IconsComponent implements OnInit {
       console.log(res)
     })
   }
+  un_archive(){
+    let data={
+      noteIdList: [this.childmessage],
+      isArchived: false
+    }
+    this.note.archive_note(data).subscribe((res)=>{
+      console.log(res);
+    })
+  }
   delete(){
     let data={
       noteIdList: [this.childmessage],
       isDeleted: true
     }
     this.note.delete_note(data).subscribe((res:any)=>{
+      console.log(res);
+    })
+  }
+  restore(){
+    let data={
+      noteIdList: [this.childmessage],
+      isDeleted: false
+    }
+    this.note.delete_note(data).subscribe((res)=>{
+      console.log(res);
+    })
+  }
+  delete_permanent(){
+    let data={
+      noteIdList: [this.childmessage],
+      isDeleted: true
+    }
+    this.note.permanent_delete(data).subscribe((res)=>{
       console.log(res);
     })
   }
