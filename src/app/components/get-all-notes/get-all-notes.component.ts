@@ -29,9 +29,5 @@ export class GetAllNotesComponent implements OnInit {
   receiveMessage(event:any){
     console.log(event)
     this.get_all_note();
-    this.openSnackBar(event);
-  }
-  openSnackBar(message: string) {
-    this.snack.open(message, 'Close', {duration:2000});
   }
 }

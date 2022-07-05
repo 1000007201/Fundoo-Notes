@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Inject, Output, EventEmitter } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { DataService } from 'src/app/services/dataservice/data.service';
 import { NoteService } from 'src/app/services/noteservice/note.service';
 import { UpdateNoteComponent } from '../update-note/update-note.component';
 
@@ -10,12 +11,18 @@ import { UpdateNoteComponent } from '../update-note/update-note.component';
 })
 export class DisplayNoteComponent implements OnInit {
   noteId:any;
+  subcription: any
+  message:any
 
   @Input() childMessage: any;
   @Output() messageEvent = new EventEmitter<any>();
 
-  constructor(public dialog: MatDialog, public note:NoteService) { }
+  constructor(public dialog: MatDialog, public note:NoteService, private data:DataService) { }
   ngOnInit(): void {
+    this.data.currentMessage.subscribe((message)=>{
+      this.message = message
+      console.log(this.message)
+    })
   }
   onclick(id:any){
     this.noteId=id;

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { NoteService } from 'src/app/services/noteservice/note.service';
 
@@ -25,12 +26,15 @@ export class IconsComponent implements OnInit {
   ]
   @Input() childmessage: any;
   @Output() messageEvent = new EventEmitter<any>(); 
-  constructor(private note:NoteService, private route:ActivatedRoute) {}
+  constructor(private note:NoteService, private route:ActivatedRoute,  private snack:MatSnackBar) {}
   param:any
   ngOnInit(): void {
     this.param=this.route.snapshot.url[0].path;
     console.log(this.param)
   }
+  openSnackBar(message: string) {
+     this.snack.open(message, 'Close', {duration:2000});
+    }
 
   archive(){
     let data={
@@ -40,6 +44,7 @@ export class IconsComponent implements OnInit {
     this.note.archive_note(data).subscribe((res:any)=>{
       console.log(res)
       this.messageEvent.emit(this.message='Note Archived')
+      this.openSnackBar('Note Archived')
     })
     
   }
@@ -51,6 +56,7 @@ export class IconsComponent implements OnInit {
     this.note.archive_note(data).subscribe((res)=>{
       console.log(res);
       this.messageEvent.emit(this.message='Note Archived')
+      this.openSnackBar('Note UnArchived')
     })
   }
   delete(){
@@ -61,6 +67,7 @@ export class IconsComponent implements OnInit {
     this.note.delete_note(data).subscribe((res:any)=>{
       console.log(res);
       this.messageEvent.emit(this.message='Note Trashed')
+      this.openSnackBar('Note Trashed')
     })
   }
   restore(){
@@ -71,6 +78,7 @@ export class IconsComponent implements OnInit {
     this.note.delete_note(data).subscribe((res)=>{
       console.log(res);
       this.messageEvent.emit(this.message='Note Restored')
+      this.openSnackBar('Note Restore')
     })
   }
   delete_permanent(){
@@ -81,6 +89,7 @@ export class IconsComponent implements OnInit {
     this.note.permanent_delete(data).subscribe((res)=>{
       console.log(res);
       this.messageEvent.emit(this.message='Note Deleted')
+      this.openSnackBar('Note Deleted')
     })
   }
   change_color(note_color:any){
@@ -92,7 +101,8 @@ export class IconsComponent implements OnInit {
     console.log(this.param)
     this.note.change_note_color(data).subscribe((res)=>{
       console.log(res);
-      this.messageEvent.emit(this.message='Color Updated')
+      this.messageEvent.emit(note_color)
+      this.openSnackBar('Note color updated')
     })
   }
 }

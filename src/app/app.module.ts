@@ -30,6 +30,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { AuthService } from './services/authservive/auth.service';
+import { FilterpipePipe } from './filter/filterpipe/filterpipe.pipe';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     ArchiveComponent,
     TrashComponent,
     UpdateNoteComponent,
+    FilterpipePipe,
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatMenuModule,
     MatSnackBarModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
