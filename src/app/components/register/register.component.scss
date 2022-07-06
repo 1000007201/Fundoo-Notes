@@ -94,19 +94,22 @@ img{
         margin-top: 10px;
     }    
     #username{
-        width: 500px;
+        width: 90%;
     }
     .name{
-        width: 500px;
+        width: 95%;
         flex-direction: column;
     }
     .second-name{
         margin-left: 0px;
     }
     .last-name{
-        width: 500px;
+        width: 95%;
     }
     .example-button-row{
-        width: 500px;
+        width: 95%;
+    }
+    .form-register{
+        width: 100%;
     }
 }
