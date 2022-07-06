@@ -1,5 +1,5 @@
-<div class="main-top" fxLayout="column" fxLayoutAlign="center center">
-    <div class="main" fxLayout="column" fxLayoutAlign="center center">
+<div class="main-top" fxLayout="column" fxLayoutAlign="center center" ngClass.xs="main-top-xs" fxLayoutAlign.xs="start center">
+    <div class="main" fxLayout="column" fxLayoutAlign="center center" ngClass.xs="main-xs" fxLayoutAlign.xs="start center">
         <div class="login-heading" fxLayout="column" fxLayoutAlign="space-around center">
             <h2><strong><span><span class="f-blue">F</span><span class="u-red">u</span><span
                             class="n-yellow">n</span><span class="d-blue">d</span><span class="o-green">o</span><span
@@ -7,11 +7,11 @@
             <h1>Sign in</h1>
             <h4>Use your fundoo account</h4>
         </div>
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" ngClass.xs="login-form-xs">
             <div class="login-form" fxLayout="column" fxLayoutAlign="center center">
 
-                <div class="form-input">
-                    <mat-form-field appearance="outline">
+                <div class="form-input" ngClass.xs="form-input-xs">
+                    <mat-form-field appearance="outline" ngClass.xs="input-xs">
                         <mat-label>Email</mat-label>
                         <input type="email" matInput formControlName="email">
                     </mat-form-field>
@@ -20,8 +20,8 @@
                         <p *ngIf="f['email'].errors['email']" class="invalid-feedback">Entered email is not valid</p>
                     </div>
                 </div>
-                <div class="form-input">
-                    <mat-form-field appearance="outline">
+                <div class="form-input" ngClass.xs="form-input-xs">
+                    <mat-form-field appearance="outline" ngClass.xs="input-xs">
                         <mat-label>Password</mat-label>
                         <input type="password" matInput formControlName="password">
                     </mat-form-field>

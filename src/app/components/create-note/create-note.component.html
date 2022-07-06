@@ -3,7 +3,6 @@
         <div class="form-element">
             <form [formGroup]="createNoteForm" (ngSubmit)="onSubmit()">
                 <div fxLayout="row">
-
                     <div class="input-form" *ngIf="flag">
                         <input type="text" placeholder="Title" formControlName="title">
                     </div>
@@ -24,7 +23,6 @@
                         <app-icons></app-icons>
                     </div>
                     <button mat-button>Close</button>
-
                 </div>
             </form>
         </div>

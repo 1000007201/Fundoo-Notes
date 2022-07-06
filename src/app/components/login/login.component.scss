@@ -1,5 +1,5 @@
 .main{
-    width: 30%;
+    width: 430px;
     border: 1px solid rgb(196, 189, 189);
     border-radius: 6px;
     height: 70%;
@@ -8,10 +8,11 @@
     height: 100%;
 }
 .mat-form-field{
-    width: 345px;
+    width: 355px;
 }
 .form-input{
     width: 100%;
+
 }
 #forgot-button{
     display: flex;
@@ -41,4 +42,22 @@
     color: red;
     font-size: 10px;
     margin-top: -20px;
+}
+.main-xs{
+    border: none;
+    width: 100%;
+    margin-top: 20px;
+}
+.main-top-xs{
+    margin-top: 0px;
+    justify-content: start;
+}
+.input-xs{
+    width: 100%;
+}
+.form-input-xs{
+    width: 95%;
+}
+.login-form-xs{
+    width: 100%;
 }

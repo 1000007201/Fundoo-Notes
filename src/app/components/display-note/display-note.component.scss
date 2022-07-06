@@ -6,7 +6,7 @@
 }
 .note{
     border: 1px solid rgba(200, 196, 196, 0.389);
-    width: 240px;
+    width: 100%;
     border-radius: 8px;
 }
 .note-things{
@@ -47,7 +47,25 @@
     visibility: visible;
 }
 .notes-back{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
     margin-left: 120px;
     width: 90%;
     height:auto;
+}
+.notes-list{
+    display: flex;
+    flex-direction:column;
+    // flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 120px;
+    width: 90%;
+    height:auto;
+}
+.notes-list-container{
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 40%;
 }

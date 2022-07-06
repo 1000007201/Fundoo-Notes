@@ -13,13 +13,13 @@
       <div fxLayout="row" fxLayoutAlign="space-between center">
         <div class="icon1" fxLayout="row">
           <div class="icons"><img src="../../../assets/refresh_FILL.svg"></div>
-          <div (click)="grid()" *ngIf="!gridView" class="icons"><img src="../../../assets/list.svg"></div>
-          <div (click)="list()" *ngIf="gridView" class="icons"><img src="../../../assets/grid_view_FILL.svg"></div>
+          <div (click)="list()" *ngIf="gridView" class="icons"><img src="../../../assets/list.svg"></div>
+          <div (click)="grid()" *ngIf="!gridView" class="icons"><img src="../../../assets/grid_view_FILL.svg"></div>
           <div class="icons"><img src="../../../assets/settings_FILL.svg"></div>
         </div>
         <div fxLayout="row">
           <div class="icons"><img src="../../../assets/apps_FILL.svg"></div>
-          <div class="icons"><img src="../../../assets/account_circle.svg"></div>
+          <div (click)="logout()" class="icons"><img src="../../../assets/account_circle.svg"></div>
         </div>
       </div>
     </div>

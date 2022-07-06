@@ -12,7 +12,7 @@
       <form [formGroup]="registerForm"  (ngSubmit)="onSubmit()">
         <div class="name">
           <div>
-            <mat-form-field appearance="outline">
+            <mat-form-field class="last-name" appearance="outline">
               <mat-label>First Name</mat-label>
               <input matInput formControlName="firstname">
             </mat-form-field>
@@ -21,7 +21,7 @@
             </div>
           </div>
           <div class="second-name">
-            <mat-form-field appearance="outline">
+            <mat-form-field class="last-name" appearance="outline">
               <mat-label>Last Name</mat-label>
               <input matInput formControlName="lastname">
             </mat-form-field>
@@ -50,7 +50,7 @@
         </div>
         <div class="name">
           <div>
-            <mat-form-field appearance="outline">
+            <mat-form-field class="last-name" appearance="outline">
               <mat-label>Password</mat-label>
               <input type="password" matInput formControlName="password">
             </mat-form-field>
@@ -59,7 +59,7 @@
             </div>
           </div>
           <div class="second-name">
-            <mat-form-field appearance="outline">
+            <mat-form-field class="last-name" appearance="outline">
               <mat-label>Confirm</mat-label>
               <input type="password" matInput formControlName="confirm">              
             </mat-form-field>

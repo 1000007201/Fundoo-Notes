@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ImgSrcStyleBuilder } from '@angular/flex-layout';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -6,12 +7,17 @@ import { BehaviorSubject } from 'rxjs';
 })
 
 export class DataService {
-  private messageSource = new BehaviorSubject('default message');
-currentMessage = this.messageSource.asObservable();
+  private messageSource = new BehaviorSubject('');
+  private isGrid = new BehaviorSubject(true);
+  currentMessage = this.messageSource.asObservable();
+  currentView = this.isGrid.asObservable();
 
   constructor() { }
 
   changeMessage(message: string) {
     this.messageSource.next(message)
+  }
+  changeView(flag:boolean){
+    this.isGrid.next(flag)
   }
 }

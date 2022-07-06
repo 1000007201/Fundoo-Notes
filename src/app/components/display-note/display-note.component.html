@@ -1,5 +1,26 @@
-<div class="notes-back" fxLayout="row wrap" fxLayoutAlign="start start">
-    <div class="notes-container" fxLayout="row" fxLayoutAlign="start start" *ngFor="let note of childMessage | filterpipe:message">
+<div class="notes-back" id="notes-main" *ngIf="isGrid">
+    <div class="notes-container" id="notess" fxLayout="row" fxLayoutAlign="start start"  *ngFor="let note of childMessage | filterpipe:message">
+        <div class="note" [style.background]="note.color">
+            <div class="note-things">
+                <div class="note-data">
+                    <div class="title-container" fxLayout="row" fxLayoutAlign="space-between start">
+                        <h2 (click)="openDialog(note)">{{note.title}}</h2>
+                        <div class="image-container">
+                        <img id="pin-image" src="../../../assets/push_pin_.svg">
+                        </div>
+                    </div>
+                    <h4 (click)="openDialog(note)">{{note.description}}</h4>
+                </div>
+                <div class="icons" (click)="onclick(note.id)">
+                    <app-icons [childmessage]="noteId" (messageEvent)="receiveMessage($event)"></app-icons>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="notes-list" id="notes-main" *ngIf="!isGrid">
+    <div class="notes-list-container" id="notess" fxLayout="row" fxLayoutAlign="start start"  *ngFor="let note of childMessage | filterpipe:message">
         <div class="note" [style.background]="note.color">
             <div class="note-things">
                 <div class="note-data">

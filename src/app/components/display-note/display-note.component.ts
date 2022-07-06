@@ -13,6 +13,8 @@ export class DisplayNoteComponent implements OnInit {
   noteId:any;
   subcription: any
   message:any
+  isGrid:any= true;
+  view:any
 
   @Input() childMessage: any;
   @Output() messageEvent = new EventEmitter<any>();
@@ -22,6 +24,10 @@ export class DisplayNoteComponent implements OnInit {
     this.data.currentMessage.subscribe((message)=>{
       this.message = message
       console.log(this.message)
+    })
+    this.data.currentView.subscribe((flag)=>{
+      this.isGrid=flag
+      console.log(this.isGrid)
     })
   }
   onclick(id:any){
