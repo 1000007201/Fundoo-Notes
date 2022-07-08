@@ -1,5 +1,5 @@
-<div class="notes-back" id="notes-main" *ngIf="isGrid">
-    <div class="notes-container" id="notess" fxLayout="row" fxLayoutAlign="start start"  *ngFor="let note of childMessage | filterpipe:message">
+<div class="notes-back" id="notes-main" *ngIf="isGrid" ngClass.xs="notes-back-xs" ngClass.sm="notes-back-sm" fxLayoutAlign.xs="center center" fxLayoutAlign.sm="center center">
+    <div class="notes-container" ngClass.xs="notes-container-xs" ngClass.sm="notes-container-sm"id="notess" fxLayout="row" fxLayoutAlign="start start"  *ngFor="let note of childMessage | filterpipe:message">
         <div class="note" [style.background]="note.color">
             <div class="note-things">
                 <div class="note-data">
@@ -20,7 +20,7 @@
 </div>
 
 <div class="notes-list" id="notes-main" *ngIf="!isGrid">
-    <div class="notes-list-container" id="notess" fxLayout="row" fxLayoutAlign="start start"  *ngFor="let note of childMessage | filterpipe:message">
+    <div class="notes-list-container" id="notess" ngClass.xs="notes-list-container-xs"  ngClass.sm="notes-list-container-sm" fxLayout="row" fxLayoutAlign="start start"  *ngFor="let note of childMessage | filterpipe:message">
         <div class="note" [style.background]="note.color">
             <div class="note-things">
                 <div class="note-data">

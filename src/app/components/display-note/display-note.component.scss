@@ -60,12 +60,30 @@
     // flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-left: 120px;
+    margin-left: 40px;
     width: 90%;
     height:auto;
 }
 .notes-list-container{
     margin-left: 20px;
     margin-top: 20px;
-    width: 40%;
+    width: 600px;
+}
+.notes-back-xs{
+    margin-left: 10px;
+}
+.notes-container-xs{
+    width: 90%;
+}
+.notes-list-container-xs{
+    width: 90%;
+}
+.notes-list-container-sm{
+    width: 90%;
+}
+.notes-container-sm{
+    margin-left: 10px;
+}
+.notes-back-sm{
+    margin-left: 10px;
 }

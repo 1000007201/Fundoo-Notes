@@ -78,11 +78,8 @@
 .logo-search:hover{
   background-color: rgb(211, 207, 207);
 }
-.input-bar>input:focus{
-  background-color: #fff;
-}
 .side-nav{
-  width: 15%;
+  width: 200px;
 }
 .icons{
   display: flex;
@@ -128,4 +125,22 @@
 }
 .mat-sidenav{
   border: none;
+}
+.input-bar-xs{
+  display: none !important;
+}
+.logo-search-xs{
+  display: none;
+}
+.innn-xs{
+  display: none;
+}
+.icons-xs{
+  display: none;
+}
+.icon1-xs{
+  margin-right: 0px;
+}
+.nbc-xs{
+  margin-left: 20px;
 }

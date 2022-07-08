@@ -52,7 +52,7 @@
           <div>
             <mat-form-field class="last-name" appearance="outline">
               <mat-label>Password</mat-label>
-              <input type="password" matInput formControlName="password">
+              <input type={{input}} matInput formControlName="password">
             </mat-form-field>
             <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
               <div *ngIf="f['username'].errors['required']">Enter password</div>
@@ -61,7 +61,7 @@
           <div class="second-name">
             <mat-form-field class="last-name" appearance="outline">
               <mat-label>Confirm</mat-label>
-              <input type="password" matInput formControlName="confirm">              
+              <input type={{input}} matInput formControlName="confirm">              
             </mat-form-field>
             <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
               <div *ngIf="f['username'].errors['required']">Enter confirm password</div>
@@ -72,7 +72,7 @@
         <p class="password-hint" >Use 8 or more characters with a mix of letters, numbers & symbols</p>
         </div>
         <div>
-          <mat-checkbox class="example-margin">Show Password</mat-checkbox>
+          <mat-checkbox class="example-margin" (click)="changeType()">Show Password</mat-checkbox>
         </div>
         <div class="example-button-row">
           <button routerLink="/login" id="sign-in-button" mat-button color="primary">Sign in instead</button>

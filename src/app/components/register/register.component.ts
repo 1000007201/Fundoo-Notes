@@ -10,6 +10,8 @@ import { UserService } from '../../services/userservice/user.service';
 export class RegisterComponent implements OnInit {
   registerForm !: FormGroup;
   submitted = false;
+  show:boolean=false;
+  input:string='password'
 
   constructor(private fb:FormBuilder , private user:UserService) { }
 
@@ -40,5 +42,15 @@ export class RegisterComponent implements OnInit {
     this.user.register(data).subscribe((res:any)=>{
       console.log(res);
     })
+  }
+  changeType(){
+    if (this.show == true){
+      this.input='password';
+      this.show=false
+    }
+    else{
+      this.input='text';
+      this.show=true
+    }
   }
 }
